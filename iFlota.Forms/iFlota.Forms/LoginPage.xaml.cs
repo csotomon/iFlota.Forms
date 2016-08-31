@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iFlota.Forms.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,29 @@ namespace iFlota.Forms
         public LoginPage()
         {
             InitializeComponent();
+
+           
+
+        }
+
+        private async void OnHacerLogin(object sender, EventArgs e)
+        {
+            IAutenticacionServicio autenticar = DependencyService.Get<IAutenticacionServicio>();
+            Button boton = (Button)sender;
+            if (sender == MicrosoftButton)
+            {
+                bool test= await autenticar.Login(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.MicrosoftAccount);
+            }
+            else if (sender == FacebooktButton)
+            {
+                bool test = await autenticar.Login(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.Facebook);
+            }
+            else if (sender == GoogleButton)
+            {
+                bool test = await autenticar.Login(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.Google);
+            }
+
+
         }
     }
 }

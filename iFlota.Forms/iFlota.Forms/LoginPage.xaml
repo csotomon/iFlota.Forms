@@ -5,10 +5,16 @@
   <StackLayout HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand">
     <Button Text="Login Microsoft"
-            BorderWidth="3"/>
+            BorderWidth="3"
+            x:Name="MicrosoftButton"
+            Clicked="OnHacerLogin"/>
     <Button Text="Login Facebook"
-            BorderWidth="3"/>
+            BorderWidth="3"
+            x:Name="FacebooktButton"
+            Clicked="OnHacerLogin"/>
     <Button Text="Login Google"
-            BorderWidth="3"/>
+            BorderWidth="3"
+            x:Name="GoogleButton"
+            Clicked="OnHacerLogin"/>
   </StackLayout>
 </ContentPage>

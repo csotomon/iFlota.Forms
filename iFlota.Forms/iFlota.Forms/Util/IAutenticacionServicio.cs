@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace iFlota.Forms.Util
 {
-    public interface IAutenticar
+    public interface IAutenticacionServicio
     {
-        Task<bool> Autenticar(MobileServiceAuthenticationProvider servicio);
+        Task<bool> Login(MobileServiceAuthenticationProvider servicio);
+        void Logout();
     }
 }

@@ -1,4 +1,5 @@
-﻿using iFlota.Forms.Util;
+﻿using iFlota.Forms.Managers;
+using iFlota.Forms.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,6 @@ namespace iFlota.Forms
     public partial class App : Application
     {
         public static bool UsuarioLoggeado { get; set; }
-        public static IAutenticar Autenticador { get; set; }
         public App()
         {
             InitializeComponent();
@@ -35,11 +35,6 @@ namespace iFlota.Forms
         protected override void OnResume()
         {
             // Handle when your app resumes
-        }
-
-        public static void Init(IAutenticar autenticador)
-        {
-            Autenticador = autenticador;
         }
     }
 }
