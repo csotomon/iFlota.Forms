@@ -1,9 +1,11 @@
 ﻿using iFlota.Forms.Util;
+using iFlota.Forms.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 using Xamarin.Forms;
 
@@ -25,15 +27,15 @@ namespace iFlota.Forms
             Button boton = (Button)sender;
             if (sender == MicrosoftButton)
             {
-                bool test= await autenticar.Login(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.MicrosoftAccount);
+                bool test= await LoginManager.Instancia.Autenticar(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.MicrosoftAccount);
             }
             else if (sender == FacebooktButton)
             {
-                bool test = await autenticar.Login(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.Facebook);
+                bool test = await LoginManager.Instancia.Autenticar(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.Facebook);
             }
             else if (sender == GoogleButton)
             {
-                bool test = await autenticar.Login(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.Google);
+                bool test = await LoginManager.Instancia.Autenticar(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.Google);
             }
 
 

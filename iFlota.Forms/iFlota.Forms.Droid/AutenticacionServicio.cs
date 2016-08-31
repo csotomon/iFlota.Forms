@@ -23,27 +23,18 @@ namespace iFlota.Forms.Droid
         /// </summary>
         /// <param name="servicio">El proveedor de autenticacion</param>
         /// <returns></returns>
-        public async Task<bool> Login(MobileServiceAuthenticationProvider servicio)
+        public async Task<MobileServiceUser> Login(MobileServiceAuthenticationProvider servicio)
         {
-            var success = false;
-            var message = string.Empty;
-            MobileServiceUser user;
             try
             {
-                user = await LoginManager.Instancia.MobileClient.LoginAsync(Xamarin.Forms.Forms.Context, servicio);
-                if (user != null)
-                {
-                    message = string.Format("you are now signed-in as {0}.",
-                        user.UserId);
-                    success = true;
-                }
+                return await LoginManager.Instancia.MobileClient.LoginAsync(Xamarin.Forms.Forms.Context, servicio);
+               
             }
             catch (Exception ex)
             {
-                message = ex.Message;
+                throw ex;
             }
 
-            return success;
         }
         /// <summary>
         /// Cierra sesión en el auth de azure

@@ -9,7 +9,7 @@ namespace iFlota.Forms.Util
 {
     public interface IAutenticacionServicio
     {
-        Task<bool> Login(MobileServiceAuthenticationProvider servicio);
+        Task<MobileServiceUser> Login(MobileServiceAuthenticationProvider servicio);
         void Logout();
     }
 }
