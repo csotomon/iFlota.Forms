@@ -15,6 +15,10 @@
     <Button Text="Login Google"
             BorderWidth="3"
             x:Name="GoogleButton"
-            Clicked="OnHacerLogin"/>
+            Clicked="OnTest"/>
+    <Button Text="Registro"
+            BorderWidth="3"
+            x:Name="RegistroButton"
+            Clicked="OnRegistro"/>
   </StackLayout>
 </ContentPage>

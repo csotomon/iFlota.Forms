@@ -16,9 +16,6 @@ namespace iFlota.Forms
         public LoginPage()
         {
             InitializeComponent();
-
-           
-
         }
 
         private async void OnHacerLogin(object sender, EventArgs e)
@@ -27,7 +24,20 @@ namespace iFlota.Forms
             Button boton = (Button)sender;
             if (sender == MicrosoftButton)
             {
-                bool test= await LoginManager.Instancia.Autenticar(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.MicrosoftAccount);
+                try
+                {
+                    var exitoso = await LoginManager.Instancia.Autenticar(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.MicrosoftAccount);
+                    if (exitoso)
+                    {
+                        Navigation.InsertPageBefore(new iFlota.Forms.MainPage(), this);
+                        await Navigation.PopAsync();
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
             }
             else if (sender == FacebooktButton)
             {
@@ -37,8 +47,17 @@ namespace iFlota.Forms
             {
                 bool test = await LoginManager.Instancia.Autenticar(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.Google);
             }
+        }
 
+        private async void OnRegistro(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegistroPage());
+        }
 
+        private async void OnTest(object sender, EventArgs e)
+        {
+            Navigation.InsertPageBefore(new iFlota.Forms.MainPage(), this);
+            await Navigation.PopAsync(); ;
         }
     }
 }
