@@ -29,14 +29,14 @@ namespace iFlota.Forms
                     var exitoso = await LoginManager.Instancia.Autenticar(Microsoft.WindowsAzure.MobileServices.MobileServiceAuthenticationProvider.MicrosoftAccount);
                     if (exitoso)
                     {
-                        Navigation.InsertPageBefore(new iFlota.Forms.MainPage(), this);
-                        await Navigation.PopAsync();
+                        Application.Current.MainPage = new NavigationPage(new iFlota.Forms.VehiculoPage());
+                        //Application.Current.MainPage = new VehiculoPage();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
 
-                    throw;
+                    //throw;
                 }
             }
             else if (sender == FacebooktButton)
@@ -51,7 +51,8 @@ namespace iFlota.Forms
 
         private async void OnRegistro(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegistroPage());
+            //Application.Current.MainPage = new NavigationPage(new iFlota.Forms.VehiculoPage());
+            Application.Current.MainPage = new VehiculoPage();
         }
 
         private async void OnTest(object sender, EventArgs e)

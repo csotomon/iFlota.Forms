@@ -52,12 +52,16 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Managers\UsuarioManager.cs" />
+    <Compile Include="Managers\VehiculoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroPage.xaml.cs">
       <DependentUpon>RegistroPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util\IAutenticacionServicio.cs" />
     <Compile Include="Util\Singleton.cs" />
+    <Compile Include="VehiculoPage.xaml.cs">
+      <DependentUpon>VehiculoPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -112,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="RegistroPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="VehiculoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

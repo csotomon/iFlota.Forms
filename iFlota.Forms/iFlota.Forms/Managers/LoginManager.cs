@@ -30,7 +30,7 @@ namespace iFlota.Forms.Managers
         /// <summary>
         /// Vehiculo escogido por el usuario
         /// </summary>
-        public Vehiculo vehiculo { get; set; }
+        public Vehiculo Vehiculo { get; set; }
 
         /// <summary>
         /// Cliente de conexion a Azure Mobile Services
@@ -52,6 +52,11 @@ namespace iFlota.Forms.Managers
         public bool Autenticado
         {
             get { return autenticado; }
+        }
+
+        public Usuario Usuario
+        {
+            get { return usuario; }
         }
         public LoginManager()
         {
