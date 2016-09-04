@@ -1,17 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:iFlota.Forms.DataObjects;assembly=Vehiculo"
+             xmlns:managers="clr-namespace:iFlota.Forms.Managers;assembly=iFlota.Forms.Managers"
              x:Class="iFlota.Forms.VehiculoPage"
              Title="Vehiculo">
   <StackLayout>
-    <Label Text="Lista Total"
-           
+    <!--
+    <Label Text="{Binding Source={x:Static managers:LoginManager.Instancia.Usuario.Vehiculos}}"
+     
            HorizontalOptions="Center" />
-    <ListView x:Name="listaVehiculos">
+           -->
+           <ListView x:Name="listaVehiculos"
+                     ItemSelected="OnSeleccion">
       <ListView.ItemTemplate>
         <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <Label Text="{Binding Placas}"/>
+            </ViewCell.View>
+          </ViewCell>
+          <!--
           <TextCell Text="{Binding Placas}"></TextCell>
+          -->
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

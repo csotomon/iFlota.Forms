@@ -22,5 +22,11 @@ namespace iFlota.Forms
             listaVehiculos.ItemsSource = LoginManager.Instancia.Usuario.Vehiculos;
             //listaVehiculos.ItemsSource = vehiculos;
         }
+
+        private async void OnSeleccion(object sender, EventArgs e)
+        {
+            LoginManager.Instancia.Vehiculo = (Vehiculo)listaVehiculos.SelectedItem;
+            Application.Current.MainPage = new MainPage();
+        }
     }
 }

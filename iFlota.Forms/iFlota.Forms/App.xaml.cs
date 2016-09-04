@@ -17,7 +17,8 @@ namespace iFlota.Forms
             InitializeComponent();
 
             if (!LoginManager.Instancia.Autenticado)
-                MainPage = new NavigationPage(new LoginPage());
+                //MainPage = new NavigationPage(new LoginPage());
+                MainPage = new MainPage();
             else
                 MainPage = new NavigationPage(new iFlota.Forms.MainPage());
         }
