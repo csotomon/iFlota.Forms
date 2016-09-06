@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iFlota.Forms.Servicios
 {
-    interface IAutenticacionServicio
+    public interface IAutenticacionServicio
     {
         Task<bool> AutenticarAsync();
 

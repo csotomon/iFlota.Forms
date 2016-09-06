@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace iFlota.Forms.Servicios
 {
     class AutenticacionServicio : IAutenticacionServicio
     {
+        readonly IAutenticador _Autenticador;
+
+
+        public AutenticacionServicio()
+        {
+            _Autenticador = DependencyService.Get<IAutenticador>();
+        }
+
+
         public bool EstaAutenticado
         {
             get
