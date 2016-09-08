@@ -44,6 +44,7 @@
       <DependentUpon>ChequeoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
+    <Compile Include="Conversores\InvertirBooleanConverter.cs" />
     <Compile Include="DataObjects\Identidad.cs" />
     <Compile Include="DataObjects\Usuario.cs" />
     <Compile Include="DataObjects\Vehiculo.cs" />
@@ -193,9 +194,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Paginas\Splash\SplashPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

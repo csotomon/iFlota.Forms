@@ -3,10 +3,17 @@
   xmlns="http://xamarin.com/schemas/2014/forms"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   x:Class="iFlota.Forms.Paginas.Splash.SplashPage"
-  xmlns:page="clr-namespace:iFlota.Forms.Paginas.Splash"
-  xmlns:statics="clr-namespace:iFlota.Forms.Statics"
-  xmlns:i18n="clr-namespace:iFlota.Forms.Localizacion"
+  xmlns:page="clr-namespace:iFlota.Forms.Paginas.Splash;assembly=iFlota.Forms"
+  xmlns:statics="clr-namespace:iFlota.Forms.Statics;assembly=iFlota.Forms"
+  xmlns:i18n="clr-namespace:iFlota.Forms.Localizacion;assembly=iFlota.Forms"
+  xmlns:converters="clr-namespace:iFlota.Forms.Conversores" 
   BackgroundColor="White">
+
+  <page:SplashPageXaml.Resources>
+    <ResourceDictionary>
+      <converters:InvertirBooleanConverter x:Key="inversorBool" />
+    </ResourceDictionary>
+  </page:SplashPageXaml.Resources>
   
   <page:SplashPageXaml.Content>
     <AbsoluteLayout>
@@ -60,30 +67,29 @@
 				    Padding="20">
           <StackLayout>
             <ContentView Padding="0,0,0,20">
-              <AbsoluteLayout 
+              <AbsoluteLayout
 								VerticalOptions="FillAndExpand"
 								HorizontalOptions="FillAndExpand">
-                <Label 
-									x:Name="SignInButton" 
-									Scale="0" 
-									Text="Ingresar" 
-									TextColor="White" 
-									BackgroundColor="{x:Static statics:Paleta._002}" 
-									XAlign="Center" 
-									YAlign="Center" 
-									HeightRequest="44" 
-                  IsEnabled="false"
-                  Opacity="0.5"
-									AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0" 
-									AbsoluteLayout.LayoutFlags="All" />              
-              </AbsoluteLayout>
-              <ActivityIndicator 
-									x:Name="SignInButtonActivityIndicator" 
-									IsEnabled="{Binding EstaPresentandoLoginUI}" 
-									IsVisible="{Binding EstaPresentandoLoginUI}" 
-									IsRunning="{Binding EstaPresentandoLoginUI}" 
-									AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0" 
+                <Label
+									x:Name="SignInButton"
+									Scale="0"
+									Text="Registrarse"
+									TextColor="White"
+									BackgroundColor="{x:Static statics:Paleta._002}"
+									XAlign="Center"
+									YAlign="Center"
+									HeightRequest="44"
+									IsEnabled="{Binding EstaPresentandoLoginUI, Converter={StaticResource inversorBool}}"
+									AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
 									AbsoluteLayout.LayoutFlags="All" />
+                <ActivityIndicator
+									x:Name="SignInButtonActivityIndicator"
+									IsEnabled="{Binding EstaPresentandoLoginUI}"
+									IsVisible="{Binding EstaPresentandoLoginUI}"
+									IsRunning="{Binding EstaPresentandoLoginUI}"
+									AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
+									AbsoluteLayout.LayoutFlags="All" />
+              </AbsoluteLayout>
             </ContentView>
           </StackLayout>
         

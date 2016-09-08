@@ -11,13 +11,13 @@ namespace iFlota.Forms.ViewModels.Spash
     public class SplashViewModel : BaseViewModel
     {
         //readonly IConfigFetcher _ConfigFetcher;
-        bool estaPResentandoLoginUI;
+        bool estaPresentandoLoginUI;
 
         public bool EstaPresentandoLoginUI {
-            get { return estaPResentandoLoginUI; }
+            get { return estaPresentandoLoginUI; }
             set
             {
-                estaPResentandoLoginUI = value;
+                estaPresentandoLoginUI = value;
                 OnPropertyChanged("EstaPresentandoLoginUI");
             } 
         }
