@@ -50,7 +50,19 @@
     <Compile Include="HistorialPage.xaml.cs">
       <DependentUpon>HistorialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Localizacion\ILocalizar.cs" />
+    <Compile Include="Localizacion\ILocalize.cs" />
+    <Compile Include="Localizacion\PlatformCulture.cs" />
+    <Compile Include="Localizacion\RecursosTexto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosTexto.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localizacion\RecursosTexto.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosTexto.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localizacion\TranslateExtension.cs" />
     <Compile Include="Managers\LoginManager.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -87,6 +99,14 @@
     <Compile Include="ViewModels\Spash\SplashViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Localizacion\RecursosTexto.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosTexto.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localizacion\RecursosTexto.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosTexto.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -173,7 +193,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Paginas\Splash\SplashPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

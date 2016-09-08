@@ -33,7 +33,17 @@ namespace iFlota.Forms.ViewModels.Spash
             }
         }
 
-        //string password
+        string password = "12345";
+        public string Password
+        {
+            get { return password; }
+             
+            set
+            {
+                password = value;
+                OnPropertyChanged("Password");
+            }
+        }
 
 
         public SplashViewModel(INavigation navegacion = null) : base(navegacion)

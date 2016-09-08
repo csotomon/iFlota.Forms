@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using iFlota.Forms.Localizacion;
 
 namespace iFlota.Forms.Paginas.Splash
 {
@@ -18,15 +19,12 @@ namespace iFlota.Forms.Paginas.Splash
         {
             InitializeComponent();
             BindingContext = new SplashViewModel();
+            //SplashTitle.Text = RecursosTexto.Splash_Title;
         }
     }
 
     public abstract class SplashPageXaml : ModelBoundContentPage<SplashViewModel>
     {
-        /*
-        public SplashPageXaml() {
-            BindingContext = new SplashViewModel();
-        }
-        */
+        
     }
 }

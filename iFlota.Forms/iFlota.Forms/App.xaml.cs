@@ -1,4 +1,5 @@
-﻿using iFlota.Forms.Managers;
+﻿using iFlota.Forms.Localizacion;
+using iFlota.Forms.Managers;
 using iFlota.Forms.Paginas.Splash;
 using iFlota.Forms.Util;
 using System;
@@ -19,7 +20,16 @@ namespace iFlota.Forms
         {
             InitializeComponent();
 
+            if (Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
+            {
+                var ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
+                RecursosTexto.Culture = ci;
+                DependencyService.Get<ILocalize>().SetLocale(ci);
+            }
+
+
             MainPage = new SplashPage();
+            //MainPage = new LoginPage();
 
             /*
             _AutenticacionServicio = DependencyService.Get<iFlota.Forms.Servicios.IAutenticacionServicio>();
