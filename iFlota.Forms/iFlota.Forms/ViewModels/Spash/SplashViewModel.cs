@@ -11,7 +11,7 @@ namespace iFlota.Forms.ViewModels.Spash
     public class SplashViewModel : BaseViewModel
     {
         //readonly IConfigFetcher _ConfigFetcher;
-        bool estaPresentandoLoginUI;
+        private bool estaPresentandoLoginUI;
 
         public bool EstaPresentandoLoginUI {
             get { return estaPresentandoLoginUI; }
@@ -22,7 +22,7 @@ namespace iFlota.Forms.ViewModels.Spash
             } 
         }
 
-        string username = "alambrito@mane.com";
+        private string username = "alambrito@mane.com";
         public string Username
         {
             get { return username; }
@@ -33,7 +33,7 @@ namespace iFlota.Forms.ViewModels.Spash
             }
         }
 
-        string password = "12345";
+        private string password = "12345";
         public string Password
         {
             get { return password; }

@@ -62,6 +62,24 @@ namespace iFlota.Forms.Localizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Password.
+        /// </summary>
+        public static string Splash_PasswordTitleLabel {
+            get {
+                return ResourceManager.GetString("Splash_PasswordTitleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sigin.
+        /// </summary>
+        public static string Splash_SkipSignIn {
+            get {
+                return ResourceManager.GetString("Splash_SkipSignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a IFLOTA.
         /// </summary>
         public static string Splash_Title {
