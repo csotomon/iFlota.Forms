@@ -121,7 +121,10 @@
     <value>Password</value>
   </data>
   <data name="Splash_SkipSignIn" xml:space="preserve">
-    <value>Sigin</value>
+    <value>SKIP SING IN</value>
+  </data>
+  <data name="Splash_SignIn" xml:space="preserve">
+    <value>SIGN IN</value>
   </data>
   <data name="Splash_Title" xml:space="preserve">
     <value>IFLOTA</value>

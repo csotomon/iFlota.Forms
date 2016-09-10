@@ -12,6 +12,7 @@
   <page:SplashPageXaml.Resources>
     <ResourceDictionary>
       <converters:InvertirBooleanConverter x:Key="inversorBool" />
+	  <converters:BoolLabelOpacidadConverter x:Key="opacidadConversor" />
     </ResourceDictionary>
   </page:SplashPageXaml.Resources>
   <page:SplashPageXaml.Content>
@@ -79,7 +80,8 @@
 									YAlign="Center" 
 									HeightRequest="44" 
 									IsEnabled="{Binding EstaPresentandoLoginUI, Converter={StaticResource inversorBool}}" 
-									sAbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0" 
+									Opacity="{Binding EstaPresentandoLoginUI, Converter={StaticResource opacidadConversor}}"
+									AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0" 
 									AbsoluteLayout.LayoutFlags="All" />
 								<ActivityIndicator 
 									x:Name="SignInButtonActivityIndicator" 
@@ -100,7 +102,8 @@
 								XAlign="Center" 
 								YAlign="Center" 
 								HeightRequest="44" 
-								IsEnabled="{Binding EstaPresentandoLoginUI, Converter={StaticResource inversorBool}}" />
+								IsEnabled="{Binding EstaPresentandoLoginUI, Converter={StaticResource inversorBool}}"
+								Opacity="{Binding EstaPresentandoLoginUI, Converter={StaticResource opacidadConversor}}" />
 						</ContentView>
 						<AbsoluteLayout>
 							<Image 

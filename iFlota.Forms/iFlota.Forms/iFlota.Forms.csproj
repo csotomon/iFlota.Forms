@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Spash\SplashViewModel.cs" />
+    <Compile Include="Conversores\BoolLabelOpacidadConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localizacion\RecursosTexto.es.resx">

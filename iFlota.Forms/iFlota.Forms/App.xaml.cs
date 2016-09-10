@@ -14,7 +14,7 @@ namespace iFlota.Forms
     public partial class App : Application
     {
         readonly iFlota.Forms.Servicios.IAutenticacionServicio _AutenticacionServicio;
-
+		public static int VelocidadAnimacion = 250;
         public static bool UsuarioLoggeado { get; set; }
         public App()
         {
