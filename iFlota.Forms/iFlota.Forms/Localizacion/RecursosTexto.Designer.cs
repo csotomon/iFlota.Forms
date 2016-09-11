@@ -76,5 +76,29 @@ namespace iFlota.Forms.Localizacion {
                 return ResourceManager.GetString("Splash_UsernameTitleLabel", resourceCulture);
             }
         }
+        
+        public static string NetworkConnection_Alert_Title {
+            get {
+                return ResourceManager.GetString("NetworkConnection_Alert_Title", resourceCulture);
+            }
+        }
+        
+        public static string NetworkConnection_Alert_Message {
+            get {
+                return ResourceManager.GetString("NetworkConnection_Alert_Message", resourceCulture);
+            }
+        }
+        
+        public static string NetworkConnection_Alert_Confirm {
+            get {
+                return ResourceManager.GetString("NetworkConnection_Alert_Confirm", resourceCulture);
+            }
+        }
+        
+        public static string _ {
+            get {
+                return ResourceManager.GetString("", resourceCulture);
+            }
+        }
     }
 }

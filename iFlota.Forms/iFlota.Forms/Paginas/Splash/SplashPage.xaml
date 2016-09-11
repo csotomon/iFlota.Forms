@@ -83,7 +83,7 @@
 								VerticalOptions="FillAndExpand"
 								HorizontalOptions="FillAndExpand">
 								<Label 
-									x:Name="SignInButton" 
+									x:Name="LoginButton" 
 									Scale="0" 
 									Text="{i18n:Translate Splash_SignIn}" 
 									TextColor="White" 

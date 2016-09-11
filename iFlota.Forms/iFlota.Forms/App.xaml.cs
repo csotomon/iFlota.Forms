@@ -8,17 +8,38 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using System.Threading.Tasks;
+using Plugin.Connectivity;
 
 namespace iFlota.Forms
 {
     public partial class App : Application
     {
-        readonly iFlota.Forms.Servicios.IAutenticacionServicio _AutenticacionServicio;
+        readonly Servicios.IAutenticacionServicio autenticacionServicio;
 		public static int VelocidadAnimacion = 250;
         public static bool UsuarioLoggeado { get; set; }
+
+		static Application app;
+		public static Application AppActual
+		{
+			get { return app; }
+		}
+
+		/// <summary>
+		/// Indica si el dispositivo tiene conexion.
+		/// </summary>
+		/// <value><c>true</c> Si el dispositivo tiene conexion, de lo contrario <c>false</c>.</value>
+		public static bool EstaConectado
+		{
+			//Verifica si el dispositivo tiene conexion
+			get { return CrossConnectivity.Current.IsConnected; }
+		}
+
         public App()
         {
             InitializeComponent();
+
+			app = this;
 
             if (Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
             {
@@ -27,8 +48,10 @@ namespace iFlota.Forms
                 DependencyService.Get<ILocalize>().SetLocale(ci);
             }
 
+			autenticacionServicio = DependencyService.Get<Servicios.IAutenticacionServicio>();
 
-            MainPage = new SplashPage();
+			if(!autenticacionServicio.EstaAutenticado)
+				MainPage = new SplashPage();
             //MainPage = new LoginPage();
 
             /*
@@ -58,5 +81,39 @@ namespace iFlota.Forms
         {
             // Handle when your app resumes
         }
+
+		public static async Task EjecutarSiConectado(Func<Task> accionAEjecutar)
+		{
+			if (EstaConectado)
+			{
+				await accionAEjecutar();
+			}
+			else
+			{
+				await MostarAlertaConexionRed();
+			}
+		}
+
+		static async Task MostarAlertaConexionRed()
+		{
+			
+			await AppActual.MainPage.DisplayAlert(
+				RecursosTexto.NetworkConnection_Alert_Title,
+				RecursosTexto.NetworkConnection_Alert_Message,
+				RecursosTexto.NetworkConnection_Alert_Confirm);
+		}
+
+		public static void CargarPrincipal()
+		{
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				//AppActual.MainPage = new RootTabPage();
+			}
+			else
+			{
+				//AppActual.MainPage = new RootPage();
+			}
+		}
+
     }
 }
