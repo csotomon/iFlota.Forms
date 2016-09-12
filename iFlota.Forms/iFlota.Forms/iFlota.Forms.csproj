@@ -87,7 +87,6 @@
     <Compile Include="RegistroPage.xaml.cs">
       <DependentUpon>RegistroPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Servicios\AutenticacionServicio.cs" />
     <Compile Include="Servicios\IAutenticacionServicio.cs" />
     <Compile Include="Servicios\IAutenticador.cs" />
     <Compile Include="Statics\Paleta.cs" />
@@ -100,6 +99,14 @@
     <Compile Include="ViewModels\Spash\SplashViewModel.cs" />
     <Compile Include="Conversores\BoolLabelOpacidadConverter.cs" />
     <Compile Include="Statics\PaletaMaterial.cs" />
+    <Compile Include="Servicios\AutenticacionServicio.cs" />
+    <Compile Include="Modelos\Identidad.cs" />
+    <Compile Include="Modelos\IdentidadClaim.cs" />
+    <Compile Include="Statics\MessagingServiceConstantes.cs" />
+    <Compile Include="Servicios\IDatosServicio.cs" />
+    <Compile Include="Modelos\Vehiculo.cs" />
+    <Compile Include="Servicios\DatosServicio.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localizacion\RecursosTexto.es.resx">
@@ -208,6 +215,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modelos\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

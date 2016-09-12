@@ -10,12 +10,13 @@ using System.Text;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using Plugin.Connectivity;
+using iFlota.Forms.Servicios;
 
 namespace iFlota.Forms
 {
     public partial class App : Application
     {
-        readonly Servicios.IAutenticacionServicio autenticacionServicio;
+        private static Servicios.IAutenticacionServicio autenticacionServicio;
 		public static int VelocidadAnimacion = 250;
         public static bool UsuarioLoggeado { get; set; }
 
@@ -23,6 +24,11 @@ namespace iFlota.Forms
 		public static Application AppActual
 		{
 			get { return app; }
+		}
+
+		public static Servicios.IAutenticacionServicio AutenticacionServicio 
+		{ 
+			get { return autenticacionServicio; }
 		}
 
 		/// <summary>
@@ -108,10 +114,12 @@ namespace iFlota.Forms
 			if (Device.OS == TargetPlatform.iOS)
 			{
 				//AppActual.MainPage = new RootTabPage();
+				AppActual.MainPage = new VehiculoPage();
 			}
 			else
 			{
 				//AppActual.MainPage = new RootPage();
+				AppActual.MainPage = new VehiculoPage();
 			}
 		}
 

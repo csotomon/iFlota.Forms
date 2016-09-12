@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace iFlota.Forms.Servicios
 {
-    interface IAutenticador
+    public interface IAutenticador
     {
         Task<MobileServiceUser> Autenticar(string autoridad, string recurso, string clienteId, string returnUri);
 

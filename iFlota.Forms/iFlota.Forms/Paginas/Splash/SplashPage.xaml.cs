@@ -9,6 +9,8 @@ using System.Text;
 using Xamarin.Forms;
 using iFlota.Forms.Localizacion;
 using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices;
+using iFlota.Forms.Statics;
 
 namespace iFlota.Forms.Paginas.Splash
 {
@@ -19,6 +21,7 @@ namespace iFlota.Forms.Paginas.Splash
 		{
 			InitializeComponent();
 			BindingContext = new SplashViewModel();
+			autenticacionServicio = App.AutenticacionServicio;
 
 			LoginButton.GestureRecognizers.Add(
 				new TapGestureRecognizer()
@@ -60,7 +63,7 @@ namespace iFlota.Forms.Paginas.Splash
 						// Broadcast a message that we have sucessdully authenticated.
 						// This is mostly just for Android. We need to trigger Android to call the SalesDashboardPage.OnAppearing() method,
 						// because unlike iOS, Android does not call the OnAppearing() method each time that the Page actually appears on screen.
-						//MessagingCenter.Send(this, MessagingServiceConstants.AUTHENTICATED);
+						MessagingCenter.Send(this, MessagingServiceConstantes.AUTENTICADO);
 					}
 				});
 		}
@@ -72,18 +75,14 @@ namespace iFlota.Forms.Paginas.Splash
 			try
 			{
 				// The underlying call behind App.Authenticate() calls the ADAL library, which presents the login UI and awaits success.
-				exitoso = await autenticacionServicio.AutenticarAsync();
+				exitoso = await autenticacionServicio.AutenticarAsync(MobileServiceAuthenticationProvider.Facebook.ToString());
 			}
 			catch (Exception ex)
 			{
-				/*
-				if (ex is AdalException && (ex as AdalException).ErrorCode == "authentication_canceled")
-				{
-					// Do nothing, just duck the exception. The user just cancelled out of the login UI.
-				}
-				else
+				if (!(ex is InvalidOperationException && ex.Message== "Authentication was cancelled by the user.") )
+				{ 
 					await DisplayAlert("Login error", "An unknown login error has occurred. Please try again.", "OK");
-					*/
+				}
 			}
 			finally
 			{

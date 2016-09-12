@@ -19,14 +19,14 @@ namespace iFlota.Forms
             InitializeComponent();
             vehiculos.Add(new Vehiculo { Placas = "ABC 123" });
             vehiculos.Add(new Vehiculo { Placas = "DEF 456" });
-            listaVehiculos.ItemsSource = LoginManager.Instancia.Usuario.Vehiculos;
-            //listaVehiculos.ItemsSource = vehiculos;
+            //listaVehiculos.ItemsSource = LoginManager.Instancia.Usuario.Vehiculos;
+            listaVehiculos.ItemsSource = vehiculos;
         }
 
         private async void OnSeleccion(object sender, EventArgs e)
         {
-            LoginManager.Instancia.Vehiculo = (Vehiculo)listaVehiculos.SelectedItem;
-            Application.Current.MainPage = new MainPage();
+            //LoginManager.Instancia.Vehiculo = (Vehiculo)listaVehiculos.SelectedItem;
+            //Application.Current.MainPage = new MainPage();
         }
     }
 }
