@@ -1,25 +1,20 @@
 ﻿using iFlota.Forms.Localizacion;
-using iFlota.Forms.Managers;
 using iFlota.Forms.Paginas.Splash;
-using iFlota.Forms.Util;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using Plugin.Connectivity;
-using iFlota.Forms.Servicios;
+using iFlota.Forms.Modelos;
 
 namespace iFlota.Forms
 {
-    public partial class App : Application
+	public partial class App : Application
     {
         private static Servicios.IAutenticacionServicio autenticacionServicio;
 		public static int VelocidadAnimacion = 250;
         public static bool UsuarioLoggeado { get; set; }
-
+		public static Usuario Usuario { get; set;} 
 		static Application app;
 		public static Application AppActual
 		{

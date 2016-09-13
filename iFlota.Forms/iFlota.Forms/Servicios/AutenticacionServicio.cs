@@ -12,9 +12,11 @@ namespace iFlota.Forms.Servicios
 {
 	public class AutenticacionServicio : IAutenticacionServicio
     {
-        readonly IAutenticador autenticador;
+        IAutenticador autenticador;
+		IDatosServicio datosServicio;
 		MobileServiceUser serviceUser;
 		Identidad identidad;
+		Usuario usuario;
 
         public AutenticacionServicio()
         {
@@ -24,35 +26,19 @@ namespace iFlota.Forms.Servicios
 
         public bool EstaAutenticado
         {
-            get
-            {
-				return serviceUser != null;
-            }
+            get { return serviceUser != null;}
         }
 
 		public Identidad Identidad
 		{
-			get
-			{
-				return identidad;
-			}
+			get{ return identidad; }
 		}
 
-		public MobileServiceUser Usuario
+		public MobileServiceUser ServiceUser
 		{
-			get
-			{
-				return serviceUser;
-			}
+			get{ return serviceUser;}
 		}
 
-		public MobileServiceClient Cliente
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
 
 		public async Task<bool> AutenticarAsync(string servicio)
         {
@@ -68,6 +54,7 @@ namespace iFlota.Forms.Servicios
 				response = response.Remove(response.Length - 1);
 
 				identidad = JsonConvert.DeserializeObject<Identidad>(response);
+
 			}
 			return true;
         }

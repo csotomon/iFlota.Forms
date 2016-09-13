@@ -7,7 +7,8 @@ namespace iFlota.Forms.Servicios
 {
 	public interface IDatosServicio
 	{
-		Task<IEnumerable<Vehiculo>> GetVehiculosPorUsuario(string usuario);
+		Task<IEnumerable<Vehiculo>> GetVehiculosPorUsuarioAsync(string usuarioId);
+		Task<Usuario> getUsuarioByEmailConector(string email, string conector);
 	}
 }
 

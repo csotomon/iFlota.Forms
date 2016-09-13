@@ -14,7 +14,6 @@ namespace iFlota.Forms.Modelos
 		public string Matricula { get; set; }
 		public DateTime fechaMatricula { get; set; }
 		public int Kilometraje { get; set; }
-		public List<Usuario> Usuarios{ get; set;}
 	}
 }
 

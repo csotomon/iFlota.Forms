@@ -11,6 +11,7 @@ using iFlota.Forms.Localizacion;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using iFlota.Forms.Statics;
+using iFlota.Forms.Modelos;
 
 namespace iFlota.Forms.Paginas.Splash
 {
@@ -75,7 +76,19 @@ namespace iFlota.Forms.Paginas.Splash
 			try
 			{
 				// The underlying call behind App.Authenticate() calls the ADAL library, which presents the login UI and awaits success.
-				exitoso = await autenticacionServicio.AutenticarAsync(MobileServiceAuthenticationProvider.Facebook.ToString());
+				var registrado = await autenticacionServicio.AutenticarAsync(MobileServiceAuthenticationProvider.MicrosoftAccount.ToString());
+				if (registrado)
+				{
+					IDatosServicio datosServicio = DependencyService.Get<IDatosServicio>();
+					var identidad = App.AutenticacionServicio.Identidad;
+					Usuario usuario = await datosServicio.getUsuarioByEmailConector(identidad.UserId, identidad.ProviderName);
+					if (usuario != null)
+					{
+						App.Usuario = usuario;
+						exitoso = true;
+					}
+				}
+
 			}
 			catch (Exception ex)
 			{

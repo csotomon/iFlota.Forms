@@ -18,9 +18,7 @@ namespace iFlota.Forms.Servicios
 
         bool EstaAutenticado { get; }
 
-		MobileServiceUser Usuario { get; }
-
-		MobileServiceClient Cliente { get; }
+		MobileServiceUser ServiceUser { get; }
 
 		Identidad Identidad { get;}
     }
