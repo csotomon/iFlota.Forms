@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 using Plugin.Connectivity;
 using iFlota.Forms.Modelos;
+using iFlota.Forms.Paginas.Vehiculos;
 
 namespace iFlota.Forms
 {
@@ -53,19 +54,6 @@ namespace iFlota.Forms
 
 			if(!autenticacionServicio.EstaAutenticado)
 				MainPage = new SplashPage();
-            //MainPage = new LoginPage();
-
-            /*
-            _AutenticacionServicio = DependencyService.Get<iFlota.Forms.Servicios.IAutenticacionServicio>();
-
-            //TextResources.Culture = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
-
-            if (!_AutenticacionServicio.EstaAutenticado)
-                //MainPage = new NavigationPage(new LoginPage());
-                MainPage = new MainPage();
-            else
-                MainPage = new NavigationPage(new iFlota.Forms.MainPage());
-                */
         }
 
         protected override void OnStart()
@@ -109,12 +97,12 @@ namespace iFlota.Forms
 			if (Device.OS == TargetPlatform.iOS)
 			{
 				//AppActual.MainPage = new RootTabPage();
-				AppActual.MainPage = new VehiculoPage();
+				AppActual.MainPage = new VehiculosPage();
 			}
 			else
 			{
 				//AppActual.MainPage = new RootPage();
-				AppActual.MainPage = new VehiculoPage();
+				AppActual.MainPage = new VehiculosPage();
 			}
 		}
 

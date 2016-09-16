@@ -1,6 +1,7 @@
 ﻿using System;
 using iFlota.Forms.Servicios;
 using iFlota.Forms.ViewModels.Base;
+using Xamarin.Forms;
 
 namespace iFlota.Forms.ViewModels.Vehiculos
 {
@@ -11,7 +12,9 @@ namespace iFlota.Forms.ViewModels.Vehiculos
 		public VehiculosViewModel()
 		{
 			this.Titulo = "Vehiculos";
-		}
+            datosServicio= DependencyService.Get<IDatosServicio>();
+
+        }
 	}
 }
 

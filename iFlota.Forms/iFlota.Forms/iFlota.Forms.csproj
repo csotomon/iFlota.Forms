@@ -80,8 +80,12 @@
       <DependentUpon>NovedadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Base\ModelBoundContentPage.cs" />
+    <Compile Include="Paginas\Base\ModelBoundTabbedPage.cs" />
     <Compile Include="Paginas\Splash\SplashPage.xaml.cs">
       <DependentUpon>SplashPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Vehiculos\VehiculosPage.xaml.cs">
+      <DependentUpon>VehiculosPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroPage.xaml.cs">
@@ -90,6 +94,7 @@
     <Compile Include="Servicios\IAutenticacionServicio.cs" />
     <Compile Include="Servicios\IAutenticador.cs" />
     <Compile Include="Statics\Paleta.cs" />
+    <Compile Include="Statics\TamanosFila.cs" />
     <Compile Include="Util\IAutenticacionServicio.cs" />
     <Compile Include="Util\Singleton.cs" />
     <Compile Include="VehiculoPage.xaml.cs">
@@ -107,10 +112,11 @@
     <Compile Include="Modelos\Vehiculo.cs" />
     <Compile Include="Servicios\DatosServicio.cs" />
     <Compile Include="Modelos\Usuario.cs" />
-    <Compile Include="Paginas\Vehiculos\VehiculosPage.xaml.cs">
-      <DependentUpon>VehiculosPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\Vehiculos\VehiculosViewModel.cs" />
+    <Compile Include="Vistas\ObjetoSeleccionadoNoPersistenteListView.cs" />
+    <Compile Include="Vistas\Vehiculos\VehiculosListaView.xaml.cs">
+      <DependentUpon>VehiculosListaView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localizacion\RecursosTexto.es.resx">
@@ -127,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Paginas\Vehiculos\VehiculosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -216,17 +219,24 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\Vehiculos\VehiculosListaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Paginas\Splash\SplashPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Modelos\" />
-    <Folder Include="Paginas\Vehiculos\" />
-    <Folder Include="ViewModels\Vehiculos\" />
+    <EmbeddedResource Include="Paginas\Vehiculos\VehiculosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<page:SplashPageXaml 
-  xmlns="http://xamarin.com/schemas/2014/forms"
-  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-  x:Class="iFlota.Forms.Paginas.Splash.SplashPage"
-  xmlns:page="clr-namespace:iFlota.Forms.Paginas.Splash;assembly=iFlota.Forms"
-  xmlns:statics="clr-namespace:iFlota.Forms.Statics;assembly=iFlota.Forms"
-  xmlns:i18n="clr-namespace:iFlota.Forms.Localizacion;assembly=iFlota.Forms"
-  xmlns:converters="clr-namespace:iFlota.Forms.Conversores" 
-  BackgroundColor="White">
-
+<page:SplashPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     x:Class="iFlota.Forms.Paginas.Splash.SplashPage"
+                     xmlns:page="clr-namespace:iFlota.Forms.Paginas.Splash;assembly=iFlota.Forms"
+                     xmlns:statics="clr-namespace:iFlota.Forms.Statics;assembly=iFlota.Forms"
+                     xmlns:i18n="clr-namespace:iFlota.Forms.Localizacion;assembly=iFlota.Forms"
+                     xmlns:converters="clr-namespace:iFlota.Forms.Conversores" 
+                     BackgroundColor="White">
   <page:SplashPageXaml.Resources>
     <ResourceDictionary>
       <converters:InvertirBooleanConverter x:Key="inversorBool" />

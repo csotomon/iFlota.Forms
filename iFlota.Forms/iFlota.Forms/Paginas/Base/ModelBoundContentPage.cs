@@ -8,13 +8,13 @@ using Xamarin.Forms;
 
 namespace iFlota.Forms.Paginas.Base
 {
-    public abstract class ModelBoundContentPage<T>: ContentPage where T:BaseViewModel
+    public abstract class ModelBoundContentPage<TViewModel> : ContentPage where TViewModel : BaseViewModel
     {
-        protected T ViewModel {
-            get { return base.BindingContext as T; }
+        protected TViewModel ViewModel {
+            get { return base.BindingContext as TViewModel; }
         }
 
-        public new T BindingContext
+        public new TViewModel BindingContext
         {
             set
             {
