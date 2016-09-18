@@ -7,12 +7,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
+using iFlota.Forms.Modelos;
+
 
 namespace iFlota.Forms.Paginas.Vehiculos
 {
     public partial class VehiculosPage : VehiculosPageXaml
     {
-        public VehiculosPage()
+        ObservableCollection<Vehiculo> vehiculos = new ObservableCollection<Vehiculo>();
+
+		public VehiculosPage()
         {
             InitializeComponent();
             Title = "Vehiculos";

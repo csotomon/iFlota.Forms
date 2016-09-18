@@ -1,7 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <page:VehiculosPageXaml xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="iFlota.Forms.Paginas.Vehiculos.VehiculosPage"
              xmlns:page="clr-namespace:iFlota.Forms.Paginas.Vehiculos;assembly=iFlota.Forms">
-  <Label Text="Hola Mundo Cruel" VerticalOptions="Center" HorizontalOptions="Center" />
+  	<Label Text="Hola Mundo Cruel" VerticalOptions="Center" HorizontalOptions="Center" />
+	<ListView x:Name="VehiculosLista">
+	</ListView>
 </page:VehiculosPageXaml>
