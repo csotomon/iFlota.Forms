@@ -7,6 +7,10 @@ using iFlota.Forms.Localizacion;
 [assembly: Dependency(typeof(iFlota.Forms.Droid.Localizacion.Localize))]
 namespace iFlota.Forms.Droid.Localizacion
 {
+    /// <summary>
+    /// Clase de implementacion de la interfaz de localizacion
+    /// Obtenida de la pagina de xamarin
+    /// </summary>
     class Localize : ILocalize
     {
         public CultureInfo GetCurrentCultureInfo()

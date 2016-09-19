@@ -97,11 +97,16 @@ namespace iFlota.Forms.Paginas.Splash
 					var identidad = App.AutenticacionServicio.Identidad;
                     // Obtiene los datos del API REST dado el email y el proveedor de autenticacion
 					Usuario usuario = await datosServicio.getUsuarioByEmailConector(identidad.UserId, identidad.ProviderName);
-					if (usuario != null)
-					{
-						App.Usuario = usuario;
-						exitoso = true;
-					}
+                    if (usuario != null)
+                    {
+                        App.Usuario = usuario;
+                        exitoso = true;
+                    }
+
+                    else
+                    {
+                        // TODO: Mostrar interfaz de creacion de usuario
+                    }
 				}
 
 			}
@@ -115,9 +120,8 @@ namespace iFlota.Forms.Paginas.Splash
 			}
 			finally
 			{
-				// When the App.Authenticate() returns, the login UI is hidden, regardless of success (for example, if the user taps "Cancel" in iOS).
-				// This means the SplashPage will be visible again, so we need to make the sign in button clickable again by hiding the activity indicator (via the IsPresentingLoginUI property).
-				ViewModel.EstaPresentandoLoginUI = false;
+                // Indica a la pagina de splash se oculto el login
+                ViewModel.EstaPresentandoLoginUI = false;
 			}
 
 			return exitoso;
