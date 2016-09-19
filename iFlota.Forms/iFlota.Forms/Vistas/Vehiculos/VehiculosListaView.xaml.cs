@@ -5,15 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace iFlota.Forms
+namespace iFlota.Forms.Vistas.Vehiculos
 {
-    public partial class MainPage : TabbedPage
+    public partial class VehiculosListaView : ObjetoSeleccionadoNoPersistenteListView
     {
-        public MainPage()
+        public VehiculosListaView()
         {
             InitializeComponent();
-            //Title = LoginManager.Instancia.Vehiculo.Placas;
-            Title = "INQ 351";
         }
     }
 }
