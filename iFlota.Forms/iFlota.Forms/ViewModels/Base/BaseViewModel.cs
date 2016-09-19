@@ -13,15 +13,9 @@ namespace iFlota.Forms.ViewModels.Base
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        bool puedeCargarMas;
-        public const string puedeCargarMasPropertyName = "PuedeCargarMas";
-
-        public bool PuedeCargarMas
-        {
-            get { return puedeCargarMas; }
-            set { SetProperty(ref puedeCargarMas, value, puedeCargarMasPropertyName); }
-        }
-
+        /// <summary>
+        /// Variable del modelo que me permite mostar si la aplicacion esta ocupada en un proceso
+        /// </summary>
         bool estaOcupado;
         public const string estaOcupadoPropertyName = "EstaOcupado";
 
@@ -30,6 +24,9 @@ namespace iFlota.Forms.ViewModels.Base
             set { SetProperty(ref estaOcupado, value, estaOcupadoPropertyName); }
         }
 
+        /// <summary>
+        /// Titulo de la pagina
+        /// </summary>
         string titulo = String.Empty;
         public const string tituloPropertyName = "Titulo";
 
@@ -41,6 +38,9 @@ namespace iFlota.Forms.ViewModels.Base
             set { SetProperty(ref titulo, value, tituloPropertyName); }
         }
 
+        /// <summary>
+        /// Subtitulo de la pagina
+        /// </summary>
         string subtitulo = String.Empty;
         public const string subtituloPropertyName = "Subtitulo";
 
@@ -50,6 +50,9 @@ namespace iFlota.Forms.ViewModels.Base
             set { SetProperty(ref subtitulo, value, subtituloPropertyName); }
         }
 
+        /// <summary>
+        /// Icono de la plagina
+        /// </summary>
         string icono = null;
         public const string IconoPropertyName = "Icono";
 
@@ -59,36 +62,56 @@ namespace iFlota.Forms.ViewModels.Base
             set { SetProperty(ref icono, value, IconoPropertyName); }
         }
 
-
-
+        /// <summary>
+        /// Objeto de navegacion de la pagina
+        /// </summary>
         public INavigation Navigation { get; set; }
 
-        public bool EstaInicializado { get; set; }
-
-      
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="navigation">Navegador de la pagina</param>
         public BaseViewModel(INavigation navigation = null)
         {
             Navigation = navigation;
         }
 
+        /// <summary>
+        /// Agrega una pagina modal a la pila de navegacion
+        /// </summary>
+        /// <param name="page">pagina a agregar</param>
+        /// <returns>Tarea Asincornica</returns>
         public async Task PushModalAsync(Page page)
         {
             if (Navigation != null)
                 await Navigation.PushModalAsync(page);
         }
 
+        /// <summary>
+        /// Elimina la pagina modal actual de la pila ed navecacion
+        /// </summary>
+        /// <returns>Tarea Asincronica</returns>
         public async Task PopModalAsync()
         {
             if (Navigation != null)
                 await Navigation.PopModalAsync();
         }
 
+        /// <summary>
+        /// Agrega una pagina a la pila de navegacion
+        /// </summary>
+        /// <param name="page">pagina a agregar</param>
+        /// <returns>Tarea Asincornica</returns>
         public async Task PushAsync(Page page)
         {
             if (Navigation != null)
                 await Navigation.PushAsync(page);
         }
 
+        /// <summary>
+        /// Elimina la pagina actual de la pila ed navecacion
+        /// </summary>
+        /// <returns>Tarea Asincronica</returns>
         public async Task PopAsync()
         {
             if (Navigation != null)

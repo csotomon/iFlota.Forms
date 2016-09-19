@@ -80,7 +80,6 @@
       <DependentUpon>NovedadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Base\ModelBoundContentPage.cs" />
-    <Compile Include="Paginas\Base\ModelBoundTabbedPage.cs" />
     <Compile Include="Paginas\Splash\SplashPage.xaml.cs">
       <DependentUpon>SplashPage.xaml</DependentUpon>
     </Compile>

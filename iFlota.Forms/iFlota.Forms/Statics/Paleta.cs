@@ -7,6 +7,10 @@ using Xamarin.Forms;
 
 namespace iFlota.Forms.Statics
 {
+    /// <summary>
+    /// Clase para el manejo de paleta de colores de la aplicación.
+    /// Obtenida de un theme de xamarin.
+    /// </summary>
     public static class Paleta
     {
         /// <summary>

@@ -5,6 +5,9 @@ using Xamarin.Forms;
 
 namespace iFlota.Forms.ViewModels.Vehiculos
 {
+    /// <summary>
+    /// ViewModel de la pagina de vehiculos
+    /// </summary>
 	public class VehiculosViewModel : BaseViewModel
 	{
 		IDatosServicio datosServicio;

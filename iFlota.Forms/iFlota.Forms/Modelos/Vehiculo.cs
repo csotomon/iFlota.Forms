@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace iFlota.Forms.Modelos
 {
+    /// <summary>
+    /// Clase que representa un Vehìculo objetido desde el API REST
+    /// </summary>
 	public class Vehiculo
 	{
 		public string Id { get; set; }

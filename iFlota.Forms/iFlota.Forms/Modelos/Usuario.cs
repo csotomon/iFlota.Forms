@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace iFlota.Forms.Modelos
+﻿namespace iFlota.Forms.Modelos
 {
-	public class Usuario
+    /// <summary>
+    /// Clase que representa la informaciòn del usuario obtenida desde el API REST
+    /// </summary>
+    public class Usuario
 	{
 
 		public string Id { get; set; }

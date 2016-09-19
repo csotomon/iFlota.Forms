@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace iFlota.Forms.Statics
 {
+    /// <summary>
+    /// Clase para el manejo de constantes para la interfaz de usuario xaml
+    /// </summary>
     public static class TamanosFila
     {
         public readonly static double AltoFilaLargaDouble = 60;

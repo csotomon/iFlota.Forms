@@ -1,11 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/// <summary>
+/// Clase extraida de la página de Xamarin
+/// https://developer.xamarin.com/guides/xamarin-forms/advanced/localization/
+/// </summary>
 
 namespace iFlota.Forms.Localizacion
 {
+    /// <summary>
+    /// Clase de ayuda para procesar la cultura multiplataforma
+    /// </summary>
     public class PlatformCulture
     {
         public PlatformCulture(string platformCultureString)
